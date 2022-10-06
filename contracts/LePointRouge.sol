@@ -54,7 +54,7 @@ contract LePointRouge is Ownable, ERC721Enumerable, ReentrancyGuard {
 
     Steps public sellingStep;
 
-    address private immutable _signerAddress;
+    address private _signerAddress;
 
     mapping(address => uint256) public s_nftsPerWallet;
 
