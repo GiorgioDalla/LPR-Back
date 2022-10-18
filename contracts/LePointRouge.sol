@@ -54,7 +54,7 @@ contract LePointRouge is Ownable, ERC721Enumerable, ReentrancyGuard {
 
     Steps public sellingStep;
 
-    address private _signerAddress;
+    address private immutable i_signerAddress;
 
     mapping(address => uint256) public s_nftsPerWallet;
 
@@ -62,9 +62,9 @@ contract LePointRouge is Ownable, ERC721Enumerable, ReentrancyGuard {
     constructor(
         string memory _theBaseURI,
         string memory _notRevealedURI,
-        address signerAddress_
+        address _signerAddress
     ) ERC721("Le Point Rouge", "LPR") {
-        _signerAddress = signerAddress_;
+        i_signerAddress = _signerAddress;
         s_nftIdCounter.increment();
         transferOwnership(msg.sender);
         sellingStep = Steps.Before;
@@ -81,7 +81,7 @@ contract LePointRouge is Ownable, ERC721Enumerable, ReentrancyGuard {
             revert LePointRouge__MintLimExceeded();
         }
         if (
-            _signerAddress !=
+            i_signerAddress !=
             keccak256(
                 abi.encodePacked(
                     "\x19Ethereum Signed Message:\n32",
