@@ -1,10 +1,4 @@
-// function deployFunc() {
-//     console.log("Hi!")
 
-// }
-
-// module.exports.default = deployFunc
-// const {networkConfig} = require ("../") don't need it either
 const { network } = require("hardhat")
 const { arguments, developmentChains } = require("../helper-hardhat-config")
 const { verify } = require("../utils/verify")

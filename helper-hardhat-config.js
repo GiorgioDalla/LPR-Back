@@ -17,9 +17,9 @@ const signatureTest4 =
 arguments = [arg1, arg2, arg3]
 
 const networkConfig = {
-    4: {
-        name: "rinkeby",
-        ethUsdPriceFeed: "don't need it yet",
+
+    5: {
+        name: "goerli",
     },
 }
 const developmentChains = ["hardhat", "localhost"]

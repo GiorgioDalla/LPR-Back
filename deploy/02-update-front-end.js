@@ -1,15 +1,15 @@
 const { ethers, network } = require("hardhat")
 const fs = require("fs")
 
-const FRONT_END_ADDRESSES_FILE = "../minting-page/constants/contractAddresses.json"
-const FRONT_END_ABI_FILE = "../minting-page/constants/abi.json"
+const FRONT_END_ADDRESSES_FILE = "../vercel-hostings/constants/contractAddresses.json"
+const FRONT_END_ABI_FILE = "../vercel-hostings/constants/abi.json"
 
 module.exports = async function () {
     if (process.env.UPDATE_FRONT_END) {
         console.log("Updating Front End..")
-       await updateContractAddresses()
-       await updateAbi()
-       console.log("Front end updated")
+        await updateContractAddresses()
+        await updateAbi()
+        console.log("Front end updated")
     }
 }
 async function updateAbi() {

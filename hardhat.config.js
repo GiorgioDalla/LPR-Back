@@ -3,7 +3,6 @@ require("@nomiclabs/hardhat-etherscan")
 require("hardhat-deploy")
 require("solidity-coverage")
 require("hardhat-gas-reporter")
-// require("hardhat-contract-sizer")
 require("dotenv").config()
 
 /**
@@ -13,9 +12,8 @@ require("dotenv").config()
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL
 const PRIVATE_KEY = process.env.RINKEBY_PRIVATE_KEY
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
-// optional
+const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
 
-// Your API key for Etherscan, obtain one at https://etherscan.io/
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 const REPORT_GAS = process.env.REPORT_GAS || false
 module.exports = {
@@ -30,16 +28,10 @@ module.exports = {
             chainId: 31337,
         },
 
-        rinkeby: {
-            url: RINKEBY_RPC_URL,
-            accounts: [PRIVATE_KEY],
-            chainId: 4,
-            blockConfirmations: 6,
-        },
         goerli: {
             url: GOERLI_RPC_URL,
             accounts: [PRIVATE_KEY],
-            chainId: 1981,
+            chainId: 5,
             blockConfirmations: 6,
         },
     },

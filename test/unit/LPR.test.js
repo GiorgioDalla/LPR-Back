@@ -76,6 +76,8 @@ const {
                       addressTest2,
                       signatureTest2
                   )
+                  txResponse
+                  txResponse2
                   const tokenURI = await LePointRouge.tokenURI(2)
                   assert.equal(tokenURI.toString(), arg2)
               })
